@@ -30,7 +30,6 @@ services:
         value: 7d
       - key: CLIENT_URLS
         value: https://gsky-client.vercel.app,http://localhost:5173
-        sync: false
       - key: UPLOAD_DIR
         value: uploads
       - key: PAYMENT_PROVIDER
