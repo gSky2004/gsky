@@ -1,12 +1,8 @@
-# Render Blueprint - Gsky Sport Shoes
-# Creates a PostgreSQL database + a Node web service.
+# Render Blueprint - Gsky Sport Shoes (backend only)
+# The PostgreSQL database is external (free Neon), so Render just runs the API.
 # Deploy: Render dashboard -> "New +" -> "Blueprint" -> select this repo.
-# Set SMTP_PASS (and optionally override values below) in the service's
-# "Environment" tab after creation.
-
-databases:
-  - name: gsky-db
-    plan: free
+# After creation, set DATABASE_URL (from Neon) + SMTP_PASS in the service's
+# "Environment" tab.
 
 services:
   - type: web
@@ -18,12 +14,10 @@ services:
     startCommand: npm start
     healthCheckPath: /api/health
     envVars:
+      - key: DATABASE_URL
+        sync: false
       - key: NODE_ENV
         value: production
-      - key: DATABASE_URL
-        fromDatabase:
-          name: gsky-db
-          property: connectionString
       - key: JWT_SECRET
         generateValue: true
       - key: JWT_EXPIRES_IN
