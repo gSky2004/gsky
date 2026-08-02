@@ -1,0 +1,21 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f8fafc"/>
+  <circle cx="650" cy="60" r="140" fill="#ef4444" opacity="0.12"/>
+  <circle cx="120" cy="540" r="180" fill="#ef4444" opacity="0.10"/>
+  <g transform="translate(60,180)">
+    <path d="M 60 240 Q 40 210 60 180 Q 120 120 220 110 Q 420 90 560 120 Q 660 140 690 200 Q 700 220 690 240 Z"
+          fill="#ef4444"/>
+    <path d="M 60 240 Q 200 210 560 230 Q 660 235 690 240 Q 600 300 420 310 Q 180 320 60 240 Z"
+          fill="#ef4444" opacity="0.85"/>
+    <rect x="90" y="150" width="320" height="26" rx="13" fill="#ffffff" opacity="0.28"/>
+    <rect x="90" y="160" width="120" height="30" rx="15" fill="#ffffff" opacity="0.35" transform="rotate(-8 150 175)"/>
+    <path d="M 620 120 Q 650 90 680 110 Q 690 130 660 150 Q 640 150 630 135 Z" fill="#f8fafc"/>
+  </g>
+  <text x="400" y="540" font-family="Arial" font-size="28" font-weight="bold" fill="#0f172a" text-anchor="middle">
+    Gsky Court King / 2
+  </text>
+  <text x="400" y="574" font-family="Arial" font-size="16" fill="#64748b" text-anchor="middle">
+    Gsky Sport Shoes
+  </text>
+</svg>

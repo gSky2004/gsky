@@ -1,0 +1,63 @@
+# Render Blueprint - Gsky Sport Shoes
+# Creates a PostgreSQL database + a Node web service.
+# Deploy: Render dashboard -> "New +" -> "Blueprint" -> select this repo.
+# Set SMTP_PASS (and optionally override values below) in the service's
+# "Environment" tab after creation.
+
+databases:
+  - name: gsky-db
+    plan: free
+
+services:
+  - type: web
+    name: gsky-api
+    runtime: node
+    rootDir: server
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: gsky-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: CLIENT_URLS
+        value: https://gsky-client.vercel.app,http://localhost:5173
+        sync: false
+      - key: UPLOAD_DIR
+        value: uploads
+      - key: PAYMENT_PROVIDER
+        value: sandbox
+      - key: PAYMENT_SANDBOX_AUTO_CONFIRM
+        value: "true"
+      - key: EMAIL_PROVIDER
+        value: smtp
+      - key: SMTP_HOST
+        value: smtp.gmail.com
+      - key: SMTP_PORT
+        value: "587"
+      - key: SMTP_SECURE
+        value: "false"
+      - key: SMTP_USER
+        value: mwansisyagasper2004@gmail.com
+      - key: SMTP_PASS
+        sync: false
+      - key: CONTACT_TO_EMAIL
+        value: mwansisyagasper2004@gmail.com
+      - key: CONTACT_FROM_NAME
+        value: Gsky Sport Shoes
+      - key: ADMIN_NAME
+        value: Gsky Admin
+      - key: ADMIN_EMAIL
+        value: admin@gskyshoes.co.tz
+      - key: ADMIN_PHONE
+        value: "0675029833"
+      - key: WHATSAPP_NUMBER
+        value: "0675029833"

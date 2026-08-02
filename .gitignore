@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Builds
+dist/
+dist-ssr/
+.vite/
+
+# Environment (never commit secrets)
+.env
+!.env.example
+
+# Logs
+*.log
+
+# Deploy artifacts
+gsky-deploy.zip
+.vercel/
+
+# OS
+.DS_Store
+Thumbs.db
