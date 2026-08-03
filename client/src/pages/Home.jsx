@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { productsApi, categoriesApi } from '../services/gskyApi';
+import { API_URL } from '../services/api';
 import { ProductCard } from '../components/ProductCard';
 import { Newsletter } from '../components/Newsletter';
 import { Testimonials } from '../components/Testimonials';
@@ -73,7 +74,7 @@ const Hero = () => {
         className="relative"
       >
         <div className="relative mx-auto max-w-md">
-          <img src="/uploads/02.webp" alt="Gsky Predator FG football boot" className="w-full rounded-3xl object-cover shadow-lift" />
+          <img src={`${API_URL}/uploads/02.webp`} alt="Gsky Predator FG football boot" className="w-full rounded-3xl object-cover shadow-lift" />
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
