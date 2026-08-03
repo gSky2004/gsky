@@ -23,7 +23,7 @@ services:
       - key: JWT_EXPIRES_IN
         value: 7d
       - key: CLIENT_URLS
-        value: https://gsky-client.vercel.app,http://localhost:5173
+        value: https://gsky.vercel.app,http://localhost:5173
       - key: UPLOAD_DIR
         value: uploads
       - key: PAYMENT_PROVIDER
