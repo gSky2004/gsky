@@ -8,9 +8,6 @@ import { useLanguage } from '../../context/LanguageContext';
 const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
-  { to: '/#testimonials', label: 'Testimonials' },
-  { to: '/#services', label: 'Our Service' },
-  { to: '/#team', label: 'Our Team' },
   { to: '/shop', label: 'Shop' },
   { to: '/#new-arrivals', label: 'New Arrivals' },
   { to: '/track', label: 'Track Order' },
@@ -18,7 +15,7 @@ const navLinks = [
 ];
 
 const keyFor = (label) =>
-  ({ Home: 'home', About: 'about', Testimonials: 'testimonials', 'Our Service': 'services', 'Our Team': 'team', Shop: 'shop', 'New Arrivals': 'arrivals', 'Track Order': 'track', Contact: 'contact' })[label] || 'home';
+  ({ Home: 'home', About: 'about', Shop: 'shop', 'New Arrivals': 'arrivals', 'Track Order': 'track', Contact: 'contact' })[label] || 'home';
 
 export const Navbar = () => {
   const { user, logout } = useAuth();
